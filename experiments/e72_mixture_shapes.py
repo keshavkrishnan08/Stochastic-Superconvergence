@@ -7,10 +7,11 @@ mixture families all with mean 0 and total variance s^2=2 (so lambda*(s^2=2)=1.2
   tri      three-component                  w=[.25,.5,.25] m=[-1.4,0,1.4] v=[1.02]*3
   uneqv    unequal-variance two-Gaussian    w=[.5,.5]  m=[-.5,.5]   v=[.75,2.75]
 
-For each we propagate the reverse VP-Euler sampler with the exact (nonlinear) mixture score and measure the
-terminal variance-error order at lambda=0 and at lambda*. The cancellation needs a Gaussian iterate, so the
-order does not reach the Gaussian 4; what we test is whether lambda* still IMPROVES the order over the
-deterministic sampler across shapes (graceful, shape-robust degradation).
+For each we propagate the reverse VP-Euler sampler with the exact (nonlinear) mixture score and report the
+slope-free variance-error REDUCTION at lambda* over the deterministic sampler at a fixed step count, plus
+whether lambda* is the variance-minimising churn on the grid. We deliberately do NOT headline a fitted
+convergence order: off-Gaussian the signed variance error can cross zero with refinement, which spikes the
+|.|-slope, so an apparent "order" there is a sign-change artifact, not a genuine rate (flagged per shape).
 """
 import os, sys, time, math
 sys.path.insert(0, os.path.dirname(__file__))
@@ -53,11 +54,15 @@ def terminal_density(means, vars, ws, B, T, lam, N, L=16.0, G=8192):
     return x, p
 
 
-def ve(means, vars, ws, B, T, lam, N):
+def ve_signed(means, vars, ws, B, T, lam, N):
     x, p = terminal_density(means, vars, ws, B, T, lam, N)
     mean = np.trapz(p * x, x); var = np.trapz(p * (x - mean) ** 2, x)
     s2 = sum(w * (m ** 2 + v) for w, m, v in zip(ws, means, vars)) - sum(w * m for w, m in zip(ws, means)) ** 2
-    return float(abs(var - s2))
+    return float(var - s2)
+
+
+def ve(means, vars, ws, B, T, lam, N):
+    return abs(ve_signed(means, vars, ws, B, T, lam, N))
 
 
 def _slope(Ns, ys):
@@ -82,16 +87,23 @@ def run(B=4.0, T=5.0):
     }
     Ns = [12, 16, 24, 32, 48, 64, 96]
     lams = [0.0, 0.8, lam_star, 1.6]
+    NRED = 64                                   # fixed step count for the slope-free reduction factor
     rows = []
     for name, (means, vars, ws) in shapes.items():
         veL = {lam: [ve(means, vars, ws, B, T, lam, N) for N in Ns] for lam in lams}
         best = min(lams, key=lambda L: veL[L][-1])
-        o_det = _slope(Ns, veL[0.0]); o_star = _slope(Ns, veL[lam_star]); o_best = _slope(Ns, veL[best])
-        rows.append({"shape": name, "order_det": o_det, "order_lamstar": o_star,
-                     "best_lam": best, "order_best": o_best,
-                     "improves": o_star > o_det + 0.3})
-        io.log(f"  E72 {name:6s}: order@0={o_det:.2f}  order@lam*={o_star:.2f}  best_lam={best:.3f}  "
-               f"(lam* improves: {o_star > o_det + 0.3})")
+        # the headline metric is the slope-free reduction at a fixed N; the fitted "order" at lam* is
+        # unreliable when the signed variance error crosses zero in this N-range (the |.| slope spikes).
+        signed_star = [ve_signed(means, vars, ws, B, T, lam_star, N) for N in Ns]
+        crosses = any(a * b < 0 for a, b in zip(signed_star, signed_star[1:]))
+        e_det = ve(means, vars, ws, B, T, 0.0, NRED); e_star = ve(means, vars, ws, B, T, lam_star, NRED)
+        rows.append({"shape": name, "var_err_det_N64": e_det, "var_err_lamstar_N64": e_star,
+                     "reduction_N64": e_det / e_star, "best_lam": best,
+                     "lamstar_is_best": abs(best - lam_star) < 1e-9,
+                     "order_det_fit": _slope(Ns, veL[0.0]), "order_lamstar_fit": _slope(Ns, veL[lam_star]),
+                     "order_fit_unreliable_sign_change": crosses})
+        io.log(f"  E72 {name:6s}: reduction@N64={e_det/e_star:.1f}x  lam*_is_best={abs(best-lam_star)<1e-9}  "
+               f"order@lam*={_slope(Ns, veL[lam_star]):.2f}{'  (order UNRELIABLE: sign change)' if crosses else ''}")
     io.save(NAME, {"config": {"B": B, "T": T, "s2": 2.0, "lambda_star": lam_star, "Ns": Ns, "lams": lams},
                    "rows": rows})
     io.log(f"{NAME} DONE in {time.time()-t0:.0f}s")
