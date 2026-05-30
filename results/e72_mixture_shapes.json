@@ -1,5 +1,5 @@
 {
-  "_saved": "2026-05-30 18:52:22",
+  "_saved": "2026-05-30 19:55:16",
   "data": {
     "config": {
       "B": 4.0,
@@ -25,35 +25,47 @@
     "rows": [
       {
         "shape": "sym2",
-        "order_det": 0.8187369288446572,
-        "order_lamstar": 2.5583789161840635,
+        "var_err_det_N64": 0.1659937281428019,
+        "var_err_lamstar_N64": 0.008592666816450212,
+        "reduction_N64": 19.318068731003926,
         "best_lam": 1.2705038278243628,
-        "order_best": 2.5583789161840635,
-        "improves": true
+        "lamstar_is_best": true,
+        "order_det_fit": 0.8187369288446572,
+        "order_lamstar_fit": 2.5583789161840635,
+        "order_fit_unreliable_sign_change": false
       },
       {
         "shape": "asym2",
-        "order_det": 0.8246080026536717,
-        "order_lamstar": 3.3869025735061524,
+        "var_err_det_N64": 0.16416006843455921,
+        "var_err_lamstar_N64": 0.003829100283974096,
+        "reduction_N64": 42.87170777992341,
         "best_lam": 1.2705038278243628,
-        "order_best": 3.3869025735061524,
-        "improves": true
+        "lamstar_is_best": true,
+        "order_det_fit": 0.8246080026536708,
+        "order_lamstar_fit": 3.3869025735002927,
+        "order_fit_unreliable_sign_change": true
       },
       {
         "shape": "tri",
-        "order_det": 0.8252320784164646,
-        "order_lamstar": 3.9513485767262035,
+        "var_err_det_N64": 0.16386354173051276,
+        "var_err_lamstar_N64": 0.004211617776040066,
+        "reduction_N64": 38.90750548702069,
         "best_lam": 1.2705038278243628,
-        "order_best": 3.9513485767262035,
-        "improves": true
+        "lamstar_is_best": true,
+        "order_det_fit": 0.8252320784164651,
+        "order_lamstar_fit": 3.951348576656483,
+        "order_fit_unreliable_sign_change": false
       },
       {
         "shape": "uneqv",
-        "order_det": 0.7796572044212756,
-        "order_lamstar": 2.003461980517606,
+        "var_err_det_N64": 0.1803051357988723,
+        "var_err_lamstar_N64": 0.02244823326414558,
+        "reduction_N64": 8.032041260318534,
         "best_lam": 1.2705038278243628,
-        "order_best": 2.003461980517606,
-        "improves": true
+        "lamstar_is_best": true,
+        "order_det_fit": 0.7796572044212771,
+        "order_lamstar_fit": 2.0034619805173812,
+        "order_fit_unreliable_sign_change": false
       }
     ]
   }
