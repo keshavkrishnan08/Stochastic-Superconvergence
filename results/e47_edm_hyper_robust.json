@@ -1,0 +1,158 @@
+{
+  "_saved": "2026-05-29 21:22:19",
+  "data": {
+    "config": {
+      "dps": 30,
+      "s2": 4.0,
+      "N_search": 1024,
+      "grid_step": 0.5,
+      "rho_set": [
+        3,
+        5,
+        7,
+        9
+      ],
+      "sigma_max_set": [
+        40.0,
+        80.0,
+        160.0
+      ]
+    },
+    "n_configs": 12,
+    "n_interior_and_within": 12,
+    "rows": [
+      {
+        "rho": 3,
+        "sigma_max": 40.0,
+        "interior_optimum": true,
+        "grid_opt_S_churn": 3.5,
+        "predicted_S_churn": 3.639321726690298,
+        "abs_gap": 0.13932172669029808,
+        "within_one_grid_step": true,
+        "KL_at0": 1.5438069460515516e-06,
+        "KL_at_opt": 6.8350873918906705e-12
+      },
+      {
+        "rho": 3,
+        "sigma_max": 80.0,
+        "interior_optimum": true,
+        "grid_opt_S_churn": 2.0,
+        "predicted_S_churn": 2.1799458558363267,
+        "abs_gap": 0.17994585583632663,
+        "within_one_grid_step": true,
+        "KL_at0": 9.199689003962277e-08,
+        "KL_at_opt": 2.008173097643684e-11
+      },
+      {
+        "rho": 3,
+        "sigma_max": 160.0,
+        "interior_optimum": true,
+        "grid_opt_S_churn": 1.0,
+        "predicted_S_churn": 0.9658567431666597,
+        "abs_gap": 0.03414325683334033,
+        "within_one_grid_step": true,
+        "KL_at0": 3.999775928868362e-09,
+        "KL_at_opt": 9.91548006245113e-13
+      },
+      {
+        "rho": 5,
+        "sigma_max": 40.0,
+        "interior_optimum": true,
+        "grid_opt_S_churn": 4.5,
+        "predicted_S_churn": 4.422263303864765,
+        "abs_gap": 0.07773669613523482,
+        "within_one_grid_step": true,
+        "KL_at0": 1.54290545242719e-06,
+        "KL_at_opt": 1.381546489251176e-12
+      },
+      {
+        "rho": 5,
+        "sigma_max": 80.0,
+        "interior_optimum": true,
+        "grid_opt_S_churn": 2.5,
+        "predicted_S_churn": 2.694933378127871,
+        "abs_gap": 0.194933378127871,
+        "within_one_grid_step": true,
+        "KL_at0": 9.254660347263679e-08,
+        "KL_at_opt": 1.4693606676147224e-11
+      },
+      {
+        "rho": 5,
+        "sigma_max": 160.0,
+        "interior_optimum": true,
+        "grid_opt_S_churn": 1.5,
+        "predicted_S_churn": 1.3197570762880513,
+        "abs_gap": 0.1802429237119488,
+        "within_one_grid_step": true,
+        "KL_at0": 4.459805211000971e-09,
+        "KL_at_opt": 1.1354068261186948e-11
+      },
+      {
+        "rho": 7,
+        "sigma_max": 40.0,
+        "interior_optimum": true,
+        "grid_opt_S_churn": 5.0,
+        "predicted_S_churn": 4.883558820401389,
+        "abs_gap": 0.1164411795986107,
+        "within_one_grid_step": true,
+        "KL_at0": 1.5411522594103497e-06,
+        "KL_at_opt": 2.9594992966518177e-12
+      },
+      {
+        "rho": 7,
+        "sigma_max": 80.0,
+        "interior_optimum": true,
+        "grid_opt_S_churn": 3.0,
+        "predicted_S_churn": 2.9750588182226534,
+        "abs_gap": 0.024941181777346513,
+        "within_one_grid_step": true,
+        "KL_at0": 9.229706793492036e-08,
+        "KL_at_opt": 1.7201344514592303e-13
+      },
+      {
+        "rho": 7,
+        "sigma_max": 160.0,
+        "interior_optimum": true,
+        "grid_opt_S_churn": 1.5,
+        "predicted_S_churn": 1.4766199679879553,
+        "abs_gap": 0.023380032012044822,
+        "within_one_grid_step": true,
+        "KL_at0": 4.483876087221192e-09,
+        "KL_at_opt": 1.8481391654048175e-13
+      },
+      {
+        "rho": 9,
+        "sigma_max": 40.0,
+        "interior_optimum": true,
+        "grid_opt_S_churn": 5.0,
+        "predicted_S_churn": 5.183856111929,
+        "abs_gap": 0.183856111929,
+        "within_one_grid_step": true,
+        "KL_at0": 1.5396575671931142e-06,
+        "KL_at_opt": 9.302479350203995e-12
+      },
+      {
+        "rho": 9,
+        "sigma_max": 80.0,
+        "interior_optimum": true,
+        "grid_opt_S_churn": 3.0,
+        "predicted_S_churn": 3.1511254653593137,
+        "abs_gap": 0.1511254653593139,
+        "within_one_grid_step": true,
+        "KL_at0": 9.200364731426197e-08,
+        "KL_at_opt": 7.082514393700983e-12
+      },
+      {
+        "rho": 9,
+        "sigma_max": 160.0,
+        "interior_optimum": true,
+        "grid_opt_S_churn": 1.5,
+        "predicted_S_churn": 1.5646422860862783,
+        "abs_gap": 0.06464228608627826,
+        "within_one_grid_step": true,
+        "KL_at0": 4.4517044866877e-09,
+        "KL_at_opt": 1.4080268576205296e-12
+      }
+    ]
+  }
+}

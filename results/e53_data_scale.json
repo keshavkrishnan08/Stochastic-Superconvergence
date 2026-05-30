@@ -1,0 +1,121 @@
+{
+  "_saved": "2026-05-29 23:17:22",
+  "data": {
+    "config": {
+      "dps": 40,
+      "B": 4.0,
+      "T": 5.0,
+      "Ns": [
+        1024,
+        2048,
+        4096,
+        8192
+      ],
+      "edm_N": 2048,
+      "s2_grid": [
+        0.5,
+        0.7,
+        0.9,
+        1.0,
+        1.1,
+        1.3,
+        1.6,
+        2.0,
+        4.0,
+        8.0
+      ]
+    },
+    "rows": [
+      {
+        "s2": 0.5,
+        "vp_has_root": false,
+        "vp_churn": 0.0,
+        "vp_order": 1.0005926212955174,
+        "edm_interior": true,
+        "edm_opt_churn": 3.137934556209214,
+        "edm_kl_improvement": 4.1237433401457196e+42
+      },
+      {
+        "s2": 0.7,
+        "vp_has_root": false,
+        "vp_churn": 0.0,
+        "vp_order": 0.9995506712568192,
+        "edm_interior": true,
+        "edm_opt_churn": 2.900506921073757,
+        "edm_kl_improvement": 2.5473635334536867e+42
+      },
+      {
+        "s2": 0.9,
+        "vp_has_root": false,
+        "vp_churn": 0.0,
+        "vp_order": 0.9988841633756446,
+        "edm_interior": true,
+        "edm_opt_churn": 2.9335786245841784,
+        "edm_kl_improvement": 9.56441418586388e+43
+      },
+      {
+        "s2": 1.0,
+        "vp_has_root": false,
+        "vp_churn": 0.0,
+        "vp_order": null,
+        "edm_interior": true,
+        "edm_opt_churn": 2.9753642950981782,
+        "edm_kl_improvement": 2.0229321672255907e+42
+      },
+      {
+        "s2": 1.1,
+        "vp_has_root": true,
+        "vp_churn": 0.43911949346343815,
+        "vp_order": 2.000341471854967,
+        "edm_interior": true,
+        "edm_opt_churn": 3.0235761226883913,
+        "edm_kl_improvement": 2.1348633197355118e+42
+      },
+      {
+        "s2": 1.3,
+        "vp_has_root": true,
+        "vp_churn": 0.7274047380939715,
+        "vp_order": 2.000813724046805,
+        "edm_interior": true,
+        "edm_opt_churn": 3.1276410189000794,
+        "edm_kl_improvement": 8.89995651033258e+42
+      },
+      {
+        "s2": 1.6,
+        "vp_has_root": true,
+        "vp_churn": 1.002260801233057,
+        "vp_order": 2.001301832029556,
+        "edm_interior": true,
+        "edm_opt_churn": 3.2851431066337597,
+        "edm_kl_improvement": 3.361819429508524e+43
+      },
+      {
+        "s2": 2.0,
+        "vp_has_root": true,
+        "vp_churn": 1.2705038278243628,
+        "vp_order": 2.001731925062484,
+        "edm_interior": true,
+        "edm_opt_churn": 3.4825481561051452,
+        "edm_kl_improvement": 5.744282181898065e+42
+      },
+      {
+        "s2": 4.0,
+        "vp_has_root": true,
+        "vp_churn": 2.137985797498613,
+        "vp_order": 2.0026456564319446,
+        "edm_interior": true,
+        "edm_opt_churn": 4.242188083055991,
+        "edm_kl_improvement": 1.6634000284119867e+44
+      },
+      {
+        "s2": 8.0,
+        "vp_has_root": true,
+        "vp_churn": 3.2277409776809254,
+        "vp_order": 2.0031504093695127,
+        "edm_interior": true,
+        "edm_opt_churn": 5.1980089206164095,
+        "edm_kl_improvement": 1.4578087497730609e+44
+      }
+    ]
+  }
+}
