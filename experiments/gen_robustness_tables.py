@@ -31,13 +31,17 @@ def main_table():
          r"\begin{tabular}{lccc}\toprule",
          r"& order at $0.7\,\lambda^\star$ & order at $\lambda^\star$ & order at $1.3\,\lambda^\star$\\\midrule"]
     if e23:
-        s = e23["summary"]
-        o.append(rf"across {s['n_configs']} configurations (min) & {s['order_off_star_min']:.3f} "
-                 rf"& {s['order_at_star_min']:.3f} & {s['order_off_star_min']:.3f}\\")
-        o.append(rf"\quad (mean) & {s['order_off_star_mean']:.3f} & {s['order_at_star_mean']:.3f} "
-                 rf"& {s['order_off_star_mean']:.3f}\\")
-        o.append(rf"\quad (max) & {s['order_off_star_max']:.3f} & {s['order_at_star_max']:.3f} "
-                 rf"& {s['order_off_star_max']:.3f}\\")
+        import statistics as _st
+        rows = e23["rows"]
+        below = [r["order_below_tail"] for r in rows]      # 0.7 lambda* (own min/mean/max)
+        star = [r["order_at_star_tail"] for r in rows]      # lambda*
+        above = [r["order_above_tail"] for r in rows]       # 1.3 lambda*  -- per-column, not pooled
+        def mmm(v):
+            return min(v), _st.mean(v), max(v)
+        (bmn, bme, bmx), (smn, sme, smx), (amn, ame, amx) = mmm(below), mmm(star), mmm(above)
+        o.append(rf"across {len(rows)} configurations (min) & {bmn:.3f} & {smn:.3f} & {amn:.3f}\\")
+        o.append(rf"\quad (mean) & {bme:.3f} & {sme:.3f} & {ame:.3f}\\")
+        o.append(rf"\quad (max) & {bmx:.3f} & {smx:.3f} & {amx:.3f}\\")
         o.append(r"\midrule predicted & $2$ & $4$ & $2$\\")
     else:
         o.append(r"\multicolumn{4}{c}{\emph{(robustness grid still computing)}}\\")
