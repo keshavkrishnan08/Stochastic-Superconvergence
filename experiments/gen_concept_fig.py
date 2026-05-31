@@ -13,6 +13,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle, FancyArrowPatch
+import matplotlib.patheffects as pe
 import io_utils as io
 from figstyle import COL
 
@@ -30,9 +31,13 @@ def main():
         dict(r=1.40, col=COL["over"],head=r"$\lambda$ large", note="too much noise", sub="overshoots"),
     ]
     for ax, sc in zip(axes, scenes):
-        ax.set_xlim(-1.9, 1.9); ax.set_ylim(-1.9, 2.15); ax.set_aspect("equal"); ax.axis("off")
-        ax.add_patch(Circle((0, 0), 1.0, fill=False, ec="0.35", lw=2.0, ls=(0, (5, 4))))   # target ring
-        ax.add_patch(Circle((0, 0), sc["r"], fc=sc["col"], ec=sc["col"], lw=2, alpha=0.55)) # sample disk
+        ax.set_xlim(-1.75, 1.75); ax.set_ylim(-1.75, 2.05); ax.set_aspect("equal"); ax.axis("off")
+        if sc["col"] == GREEN:                                                              # soft halo on the winner
+            ax.add_patch(Circle((0, 0), sc["r"] + 0.16, fc=GREEN, ec="none", alpha=0.16, zorder=0))
+        disk = Circle((0, 0), sc["r"], fc=sc["col"], ec=sc["col"], lw=2, alpha=0.6, zorder=2)  # sample disk
+        disk.set_path_effects([pe.withSimplePatchShadow(offset=(2.5, -2.5), shadow_rgbFace="0.45", alpha=0.20)])
+        ax.add_patch(disk)
+        ax.add_patch(Circle((0, 0), 1.0, fill=False, ec="0.38", lw=2.0, ls=(0, (5, 4)), zorder=3))  # target ring
         ax.text(0, 1.75, sc["head"], ha="center", fontsize=18, color=sc["col"], fontweight="bold")
         ax.text(0, -1.55, sc["note"], ha="center", fontsize=11, color="0.35")
         ax.text(0, -1.92, sc["sub"], ha="center", fontsize=11.5, color=sc["col"],
@@ -56,7 +61,7 @@ def main():
                  fontweight="bold" if c == GREEN else "normal")
     cax.text(0.5, 0.9, r"injected noise (churn) $\lambda$", ha="center", fontsize=10.5, color="0.4")
 
-    fig.suptitle("The right amount of injected noise hits the target exactly—and converges two orders faster",
+    fig.suptitle("The right amount of injected noise hits the target exactly and converges two orders faster",
                  fontsize=13.5, fontweight="bold", y=1.0)
     plt.savefig(OUT); plt.close()
     io.log("fig_infographic.png (infographic)", "figs.log")
