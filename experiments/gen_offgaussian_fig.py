@@ -43,8 +43,8 @@ def main(B=4.0, T=5.0, N=128):
     ax.text(lam_star + 0.03, ax.get_ylim()[1], r"  Gaussian $\lambda^\star$", va="top", ha="left",
             color="0.3", fontsize=11)
     ax.set_xlabel(r"churn / stochasticity level $\lambda$")
-    ax.set_ylabel(rf"terminal variance error $|\mathrm{{Var}}-s^2|$  ($N{{=}}{N}$)")
-    ax.set_title(r"The cancellation churn $\lambda^\star$ transfers across non-Gaussian shapes")
+    ax.set_ylabel(r"terminal variance error $|\mathrm{Var}-s^2|$")
+    ax.set_title(r"$\lambda^\star$ transfers across non-Gaussian shapes")
     ax.legend(frameon=False, ncol=1, loc="lower left", fontsize=10.5)
     ax.set_xlim(0, 2.6)
     fig.tight_layout()

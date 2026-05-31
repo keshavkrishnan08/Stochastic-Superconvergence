@@ -211,7 +211,7 @@ def fig_edm_toy2d():
     ax.set_ylabel(r"sliced-Wasserstein to target")
     ax.set_title(r"trained non-Gaussian score: interior churn optimum")
     ax.set_xlim(-0.5, max(cg))
-    ax.legend(fontsize=8)
+    ax.legend(fontsize=7.5, loc="upper center", ncol=2)
 
     ax2.scatter(ref[:, 0], ref[:, 1], s=4, c="0.7", alpha=0.5, label="target (8 Gaussians)")
     ax2.scatter(gen[:, 0], gen[:, 1], s=4, c="#e76f51", alpha=0.5,
