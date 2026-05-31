@@ -33,7 +33,7 @@ def main(B=4.0, T=5.0, N=128):
     mpl.rcParams.update({"font.size": 13, "axes.titlesize": 13.5, "axes.labelsize": 13, "legend.fontsize": 11})
     lam_star = float(lambda_star_vp(B, 2.0, T))
     lams = np.linspace(0.05, 2.6, 34)
-    fig, ax = plt.subplots(figsize=(7.4, 4.4))
+    fig, ax = plt.subplots(figsize=(6.0, 3.6))
     for name, (m, v, w), col in SHAPES:
         errs = [ve(m, v, w, B, T, float(l), N) for l in lams]
         ax.semilogy(lams, errs, "-", color=col, lw=2.2 if name == "Gaussian" else 1.8,
