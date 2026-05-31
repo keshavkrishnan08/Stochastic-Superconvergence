@@ -40,8 +40,9 @@ python experiments/e01_headline.py
 python experiments/make_figures.py
 python experiments/gallery.py
 
-# the consistency tests
-python tests/test_core.py
+# the consistency tests (either runner works)
+python tests/test_core.py    # standalone: prints each check, exits 0/1
+pytest tests/                # or under pytest
 ```
 
 Results are written under `results/` and figures under `figures/` (both created automatically). The
