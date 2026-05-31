@@ -15,7 +15,7 @@ is here; nothing else.
   recursions at 40–120-digit precision (`mpmath`), so the predicted and measured curves agree to many
   figures with no fitting. The trained-score studies (`e32`, `e36`, `e39`, `e66`) train small networks
   in PyTorch. `make_figures.py` and `gallery.py` rebuild every figure from the stored results.
-- `results/` — the JSON output of each run, plus the trained MNIST checkpoint. Figures and tables
+- `results/` — the JSON output of each run, plus the trained MNIST checkpoint. The figures
   regenerate from these without rerunning anything.
 - `tests/` — a small identity/consistency suite for the exact arm (the recursion, the closed forms,
   the metric degree rule).
