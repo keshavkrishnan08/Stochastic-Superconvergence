@@ -1,4 +1,4 @@
-"""E12 — Sensitivity / ablations.
+"""E12: Sensitivity / ablations.
 (a) Initialization offset e0: super-convergence needs e0=0; for e0>0 the transient term
     survives and KL plateaus at ~ (Psi(T) e0)^2/(4 s^4) (the practical boundary, links Thm B).
 (b) Finite-N optimal churn: argmin_lambda KL(N) -> lambda* as N->inf (the O(h) correction).

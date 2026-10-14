@@ -1,4 +1,4 @@
-"""E14 — Full-covariance (rotated) Gaussian: Theorem C beyond diagonal.
+"""E14: Full-covariance (rotated) Gaussian: Theorem C beyond diagonal.
 For isotropic injected noise the churn sampler is rotation-equivariant, so a target
 N(0, R diag(s_i^2) R^T) decomposes into independent eigenmodes EXACTLY. We verify by Monte-Carlo
 in 2D: sample with the matrix reverse SDE under a rotated covariance and compare the terminal

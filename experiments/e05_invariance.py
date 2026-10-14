@@ -1,4 +1,4 @@
-"""E5 — Invariance of lambda* to (B,T) at fixed s2 (Thm A). lambda* depends on the SHAPE of V,
+"""E5: Invariance of lambda* to (B,T) at fixed s2 (Thm A). lambda* depends on the SHAPE of V,
 not its time-scaling, so it is essentially flat over B and T."""
 import sys, os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src", "ssc")))

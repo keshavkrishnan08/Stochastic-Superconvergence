@@ -1,4 +1,4 @@
-"""E1 — Headline super-convergence (Thm A).
+"""E1: Headline super-convergence (Thm A).
 KL vs N for lambda in {0, 1, 2, lambda*}; measured local order -> {2,2,2,4}.
 Deterministic exact recursion at high precision. Writes results/e01_headline.json.
 """

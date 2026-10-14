@@ -1,4 +1,4 @@
-"""E3 — The resonance curve (Thm A). Measured local order p(lambda) across a fine churn grid;
+"""E3: The resonance curve (Thm A). Measured local order p(lambda) across a fine churn grid;
 it sits at ~2 generically and spikes to 4 exactly at lambda*. Deterministic, high precision."""
 import sys, os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src", "ssc")))

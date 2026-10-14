@@ -1,4 +1,4 @@
-"""E7 — Goldilocks / floor-shifted superconvergence (Thm B), the other face of the umbrella.
+"""E7: Goldilocks / floor-shifted superconvergence (Thm B), the other face of the umbrella.
 
 With a persistent score-error floor eps^2 the variance error is
     v_N - s2 = C(lambda)/N + D(lambda) eps^2 + O(N^-2),   D(lambda) = int_0^T Phi dt > 0.

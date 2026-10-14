@@ -1,4 +1,4 @@
-"""E15 — EDM-literal VE schedule (sigma(t)=t, the Karras noise schedule): bridge to real EDM.
+"""E15: EDM-literal VE schedule (sigma(t)=t, the Karras noise schedule): bridge to real EDM.
 Uses ve_quad-style V(t)=s2+ (here we build sigma^2(t)=t^2 so the EDM sigma=t). Confirms a
 superconvergence root exists for the actual EDM noise schedule and the N^-2 -> N^-4 jump occurs,
 tying the theory to the schedule practitioners use. Deterministic (exact recursion)."""

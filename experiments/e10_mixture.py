@@ -1,4 +1,4 @@
-"""E10 — Non-Gaussian boundary (honesty arm). For a 2-mode Gaussian mixture the exact score
+"""E10: Non-Gaussian boundary (honesty arm). For a 2-mode Gaussian mixture the exact score
 is nonlinear, the iterate is not Gaussian, and super-convergence does NOT occur: KL/W2 order
 stays ~2 with a bias-minimising churn near 1. Heavy Monte-Carlo, multi-seed, debiased W2^2.
 Resumable: checkpoints after each churn value.

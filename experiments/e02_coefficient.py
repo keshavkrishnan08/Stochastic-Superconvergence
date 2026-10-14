@@ -1,4 +1,4 @@
-"""E2 — Coefficient validation across (s2,B,T) (umbrella). C_closed_vp vs C_richardson;
+"""E2: Coefficient validation across (s2,B,T) (umbrella). C_closed_vp vs C_richardson;
 elementary anchors C(0),C(1) vs quadrature. Target: max rel-err < 1e-6 everywhere."""
 import sys, os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src", "ssc")))

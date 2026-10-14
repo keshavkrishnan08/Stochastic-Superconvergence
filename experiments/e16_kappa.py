@@ -1,4 +1,4 @@
-"""E16 — The kappa constant: closed-form limiting equation vs fitted asymptote.
+"""E16: The kappa constant: closed-form limiting equation vs fitted asymptote.
 Theorem A's asymptotics give lambda*(s2) ~ kappa sqrt(s2) with kappa the positive root of
    F(k) = int_0^inf e^{-(k^2-1) tau} [ k^4 e^{tau} - 2 k^2 - e^{-tau} ] dtau = 0   (B absorbed into tau).
 We solve F(k)=0 in closed form (the integral is elementary for k^2>1) and compare to lambda*/sqrt(s2)

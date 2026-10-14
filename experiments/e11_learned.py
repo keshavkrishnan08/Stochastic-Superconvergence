@@ -1,4 +1,4 @@
-"""E11 — Learned-score boundary (practical reach).
+"""E11: Learned-score boundary (practical reach).
 Part A (deterministic, bulletproof): miscalibrated LINEAR score s_hat=-x/(V+delta) -> exact
   recursion -> N-independent KL floor that masks super-convergence. Validates the umbrella
   score-floor term: floor ~ (c*delta)^2.

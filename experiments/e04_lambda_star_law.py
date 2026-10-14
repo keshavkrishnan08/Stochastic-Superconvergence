@@ -1,4 +1,4 @@
-"""E4 — The lambda*(s2) scaling law (Thm A). Root present for s2>1, absent for s2<=1;
+"""E4: The lambda*(s2) scaling law (Thm A). Root present for s2>1, absent for s2<=1;
 lambda*/sqrt(s2) -> kappa ~ 1.20. Fit kappa from the large-s2 tail."""
 import sys, os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src", "ssc")))

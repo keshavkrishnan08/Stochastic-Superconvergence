@@ -1,4 +1,4 @@
-"""E13 — Superconvergence window width (resonance sharpness / robustness of lambda*).
+"""E13: Superconvergence window width (resonance sharpness / robustness of lambda*).
 At finite N, churn within a band around lambda* still gives near-order-4. We quantify the
 half-width Delta(N): the band where KL(lambda) <= 10x KL(lambda*). Prediction: since
 KL ~ C'(lambda*)^2 (lambda-lambda*)^2/(4s^4) N^-2 near the root vs ~N^-4 at it, the half-width

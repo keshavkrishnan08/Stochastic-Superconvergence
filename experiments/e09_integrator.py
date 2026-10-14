@@ -1,4 +1,4 @@
-"""E9 — Integrator-order stacking (Thm E, exploratory). EM (weak order 1 -> KL N^-2) vs Heun
+"""E9: Integrator-order stacking (Thm E, exploratory). EM (weak order 1 -> KL N^-2) vs Heun
 (order 2 -> KL N^-4). Measure orders at lambda in {0,1,lambda*_EM} and scan for a Heun churn
 root that lifts the order further. Also a tiny consistency check: the exact per-step map
 reproduces the target (KL ~ 0)."""

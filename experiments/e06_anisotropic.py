@@ -1,4 +1,4 @@
-"""E6 — Anisotropic no-go + optimal compromise (Thm C).
+"""E6: Anisotropic no-go + optimal compromise (Thm C).
 Degenerate spectrum -> common lambda*, order 4. Non-degenerate -> lambda_dagger, order 2 with
 reduced constant. Per-mode roots, global compromise, measured KL orders."""
 import sys, os
@@ -30,7 +30,7 @@ def run(B=4.0, T=5.0, dps=60, N1=1024, N2=8192):
         # order at the compromise churn
         k1 = total_kl(B, ld, spec, T, N1); k2 = total_kl(B, ld, spec, T, N2)
         order_dagger = local_order(k1, k2, N1, N2)
-        # order at a single mode's lambda* (the mean) — should NOT super-converge unless degenerate
+        # order at a single mode's lambda* (the mean), should NOT super-converge unless degenerate
         order_dagger_dict = {"lambda_dagger": float(ld), "order_at_dagger": order_dagger}
         degenerate = len(set(spec)) == 1
         if degenerate:

@@ -1,4 +1,4 @@
-"""E8 — Schedule / diffusion universality (Thm D). For VE-linear, VE-quadratic and a
+"""E8: Schedule / diffusion universality (Thm D). For VE-linear, VE-quadratic and a
 time-varying VP ramp: confirm C(0)<0, find the super-convergence root via Richardson,
 and measure KL order at the root (->4) vs at lambda=1 (->2)."""
 import sys, os
