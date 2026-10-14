@@ -7,17 +7,17 @@ is here; nothing else.
 
 ## Layout
 
-- `src/ssc/` — the core library. The VP forward process and its marginal variance `V(t)`, the
+- `src/ssc/` - the core library. The VP forward process and its marginal variance `V(t)`, the
   churn-parameterised reverse Euler–Maruyama recursion, the closed-form discretisation coefficients
   `C(λ)` and `c2(λ)`, the cancellation churn `λ*` (root finder, extended precision), KL and
   Wasserstein metrics, and the anisotropic / learned-score variants.
-- `experiments/` — one script per study (`e01`…`e70`). The Gaussian-target studies are exact
+- `experiments/` - one script per study (`e01`…`e70`). The Gaussian-target studies are exact
   recursions at 40–120-digit precision (`mpmath`), so the predicted and measured curves agree to many
   figures with no fitting. The trained-score studies (`e32`, `e36`, `e39`, `e66`) train small networks
   in PyTorch. `make_figures.py` and `gallery.py` rebuild every figure from the stored results.
-- `results/` — the JSON output of each run, plus the trained MNIST checkpoint. The figures
+- `results/` - the JSON output of each run, plus the trained MNIST checkpoint. The figures
   regenerate from these without rerunning anything.
-- `tests/` — a small identity/consistency suite for the exact arm (the recursion, the closed forms,
+- `tests/` - a small identity/consistency suite for the exact arm (the recursion, the closed forms,
   the metric degree rule).
 
 ## Install
