@@ -1,4 +1,4 @@
-"""Wave-2 ablations (E13–E16): window width, rotated covariance, EDM schedule, kappa constant.
+"""Wave-2 ablations (E13-E16): window width, rotated covariance, EDM schedule, kappa constant.
 Single sequential process. Run after rerun_fixed completes."""
 import sys, os, time, traceback
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src", "ssc")))
